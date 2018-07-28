@@ -14,9 +14,9 @@ export class AuthorComponent implements OnInit {
   constructor(service: AuthorsService) {
     this.authors = service.getAuthors();
   }
-  getNumberOfAuthors() {
-    return this.authors.length;
-  }
+  // getNumberOfAuthors() {
+  //   return this.authors.length;
+  // }
   getTitle() {
     return this.title;
   }
