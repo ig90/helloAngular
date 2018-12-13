@@ -28,7 +28,7 @@
 <!-- <img [src]="imageUrl" />
 <button (click)="onClick()"></button> -->
 
-<app-favorite [isFavorite]="post.isFavorite"></app-favorite> 
+<app-favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite> 
 
 
 
