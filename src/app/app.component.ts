@@ -15,6 +15,12 @@ export class AppComponent {
     isFavorite: false
   };
 
+  tweet = {
+    body: '...',
+    likesCount: 0,
+    isLiked: false
+  };
+
   // onFavoriteChanged(isFavorite) {
   //   console.log('favorite changed to', isFavorite);
   // }
