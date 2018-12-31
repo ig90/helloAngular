@@ -38,3 +38,30 @@
 
 
 <app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked"></app-like>
+
+<!-- <div *ngIf="courses.length > 0">
+  List of courses
+</div>
+
+<div *ngIf="courses.length == 0">
+  No courses yet.
+</div> -->
+
+<!-- <div *ngIf="courses.length > 0; else noCourses">List of Courses</div>
+<ng-template #noCourses> No courses yet</ng-template> -->
+
+<div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+<ng-template #coursesList>List of courses</ng-template>
+<ng-template #noCourses> No courses yet</ng-template>
+
+
+<ul class="nav nav-pills"> 
+  <li class="nav-item"><a [class.active]="viewMode == 'map'" class="nav-link" (click)="changeViewMode('map')">Map View</a></li>
+  <li class="nav-item"><a [class.active]="viewMode == 'list'" class="nav-link" (click)="changeViewMode('list')">List View</a></li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div>

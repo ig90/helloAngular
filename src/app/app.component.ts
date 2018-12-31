@@ -21,6 +21,14 @@ export class AppComponent {
     isLiked: false
   };
 
+  courses = [1, 2];
+
+  viewMode = 'map';
+
+  changeViewMode(viewMode) {
+      this.viewMode = viewMode;
+  }
+
   // onFavoriteChanged(isFavorite) {
   //   console.log('favorite changed to', isFavorite);
   // }
