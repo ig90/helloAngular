@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FavoriteChangedEventArgs } from './favorite/favorite.component';
+import { CoursesComponent } from './courses.component';
 
 
 @Component({
@@ -40,5 +41,14 @@ export class AppComponent {
 
   onFavoriteChanged(eventArgs: FavoriteChangedEventArgs) {
     console.log('favorite changed to', eventArgs);
+  }
+
+  // courses List methods
+  onAdd() {
+    this.courses.push({id: 4, name: 'course4'});
+  }
+  onChange(course) {
+    let idx = this.courses.indexOf(course);
+    this.courses.splice(idx, 1);
   }
 }

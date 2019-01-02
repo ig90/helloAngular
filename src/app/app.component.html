@@ -65,6 +65,10 @@
 <ng-template #coursesList>List of courses</ng-template>
 <ng-template #noCourses> No courses yet</ng-template>
 
+<button class="courseBttn" (click)="onAdd()">Add</button>
+
 <ul>
-  <li [class.isEven]="isEven" *ngFor="let course of courses; index as i; even as isEven"> {{ i }} - {{ course.name }} <span *ngIf="isEven">even</span></li>
+  <li [class.isEven]="isEven" *ngFor="let course of courses; index as i; even as isEven"> {{ i }} - {{ course.name }} <span *ngIf="isEven">even</span>
+  <button class="courseBttn" (click)="onChange(course)">Remove</button></li>
+
 </ul>
