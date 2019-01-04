@@ -14,6 +14,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { CardComponent } from './card/card.component';
 import { LikeComponent } from './like/like.component';
 import { InputFormatDirective } from './input-format.directive';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { InputFormatDirective } from './input-format.directive';
     FavoriteComponent,
     CardComponent,
     LikeComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
