@@ -31,6 +31,8 @@ export class AppComponent {
 
   viewMode = 'map';
 
+  canSave = true;
+
   changeViewMode(viewMode) {
       this.viewMode = viewMode;
   }
