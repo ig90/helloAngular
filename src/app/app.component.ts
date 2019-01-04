@@ -22,6 +22,16 @@ export class AppComponent {
     isLiked: false
   };
 
+  canSave = true;
+
+  // for safe traversal operator example
+  task = {
+    title: 'Review application',
+    assignee: {
+      name: 'Jan Kowalski'
+    }
+  };
+
   // courses = [1, 2];
   courses = [
     { id: 1, name: 'course1 '},
@@ -30,8 +40,6 @@ export class AppComponent {
   ];
 
   viewMode = 'map';
-
-  canSave = true;
 
   changeViewMode(viewMode) {
       this.viewMode = viewMode;

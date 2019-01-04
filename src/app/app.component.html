@@ -87,3 +87,7 @@ Save
  }">
   Save
 </button>
+<br>
+
+<!-- safe traversal operator (?) -->
+<span>{{ task.assignee?.name }}</span> <!-- if assignee is null or undefined, angular is going to ignore this. -->
