@@ -91,3 +91,6 @@ Save
 
 <!-- safe traversal operator (?) -->
 <span>{{ task.assignee?.name }}</span> <!-- if assignee is null or undefined, angular is going to ignore this. -->
+<br>
+<!-- <input type="text" appInputFormat [format]="'uppercase'"> -->
+<input type="text" [appInputFormat]="'uppercase'">
