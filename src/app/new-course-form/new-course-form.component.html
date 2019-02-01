@@ -1,0 +1,62 @@
+<form #f="ngForm" (ngSubmit)="submit(f.value)">
+  <div class="form-group">
+    <label for="name"> Course name </label>
+    <input
+     ngModel
+     required
+     minlength="3"
+     type="text"
+     name="name"
+     id="name"
+     class="form-control"
+     #name="ngModel">
+     <div *ngIf="name.touched && !name.valid " class="alert alert-danger">
+        <div *ngIf="name.errors.required">Name field is required!</div>
+        <div *ngIf="name.errors.minlength">Name field should be at least {{name.errors.minlength.requiredLength}} characters!</div>
+      </div>
+  </div>
+  
+  
+  <div class="form-group">
+    <label for="category">Category</label>
+      <select
+      ngModel
+      required
+      name="category"
+      id="category"
+      #category="ngModel"
+      class="form-control">
+        <option value=""></option>
+        <option *ngFor="let c of categories" [value]="c.id"> {{ c.name }}</option>
+      </select>
+      <div *ngIf="category.touched && !category.valid " class="alert alert-danger">
+        Category field is required!
+      </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input ngModel type="checkbox" id="moneyBackGuarantee" name="isMoneyBackGuarantee"> 30-day money-back guarantee?
+    </label>
+  </div>
+  {{f.value | json}}
+  <button class="btn btn-primary" [disabled]="f.invalid">Create</button>
+</form>
+<br>
+<h4>Array form</h4>
+
+<form>
+<input 
+type="text"
+class="form-control"
+(keyup.enter)="addTopic(topic)" #topic>
+
+  <ul class="list-group">
+    <li
+    *ngFor="let topic of topics.controls" 
+    (click)="removeTopic(topic)"
+    class="list-group-item">
+    {{ topic.value }}
+    </li>
+  </ul>
+</form>
+<br>
