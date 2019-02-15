@@ -6,18 +6,12 @@ import { Http } from '@angular/http';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent {
+export class PostsComponent implements OnInit {
   posts: any[];
   private url = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http: Http) {
-
-    http.get(this.url)
-    .subscribe(response => {
-     //  console.log(response.json());
-     this.posts = response.json();
-    });
-   }
+  }
   createPost(input: HTMLInputElement) {
       const post = {
         title: input.value
@@ -33,7 +27,6 @@ export class PostsComponent {
 
   }
   updatePost(post) {
-
     this.http.patch(this.url + '/' + post.id, JSON.stringify({isRead: true}))
     .subscribe( response => {
       console.log(response.json());
@@ -47,5 +40,12 @@ export class PostsComponent {
       console.log(`post ${post.id} deleted!`);
     });
   }
-
+  ngOnInit() {
+    this.http.get(this.url)
+    .subscribe(response => {
+     //  console.log(response.json());
+     this.posts = response.json();
+    });
+  }
 }
+
