@@ -14,14 +14,17 @@ export class PostsComponent implements OnInit {
   constructor(private service: PostService) {
   }
   createPost(input: HTMLInputElement) {
-      const post = {
-        title: input.value
-      };
+    const post = {
+      title: input.value
+    };
     this.service.createPost(post)
     .subscribe(response => {
       post['id'] = response.json().id;
       this.posts.splice(0, 0, post);
       console.log(response.json());
+    }, error => {
+      alert('An unexpected error occurred');
+      console.log(error);
     });
     console.log('post created!' + input.value);
     input.value = ''; // to clear input field
@@ -31,6 +34,9 @@ export class PostsComponent implements OnInit {
     this.service.updatePost(post)
     .subscribe( response => {
       console.log(response.json());
+    }, error => {
+      alert('An unexpected error occurred');
+      console.log(error);
     });
   }
   deletePost(post) {
@@ -38,6 +44,9 @@ export class PostsComponent implements OnInit {
       const index = this.posts.indexOf(post);
       this.posts.splice(index, 1);
       console.log(`post ${post.id} deleted!`);
+    }, error => {
+      alert('An unexpected error occurred');
+      console.log(error);
     });
   }
   ngOnInit() {
@@ -45,6 +54,9 @@ export class PostsComponent implements OnInit {
     .subscribe(response => {
      //  console.log(response.json());
      this.posts = response.json();
+    }, error => {
+      alert('An unexpected error occurred');
+      console.log(error);
     });
   }
 }
