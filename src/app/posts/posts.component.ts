@@ -20,12 +20,11 @@ export class PostsComponent implements OnInit {
     const post = {
       title: input.value
     };
-    this.service.createPost(post)
-      .subscribe(
-        response => {
-          post['id'] = response.json().id;
-          this.posts.splice(0, 0, post);
-          console.log(response.json());
+    this.service.create(post)
+      .subscribe(newPost => {
+           post['id'] = newPost.id;
+           this.posts.splice(0, 0, post);
+           console.log(newPost.json());
         },
         (error: AppError) => {
           if (error instanceof BadInput) {  // 400
@@ -37,19 +36,17 @@ export class PostsComponent implements OnInit {
 
   }
   updatePost(post) {
-    this.service.updatePost(post)
-      .subscribe(
-        response => {
-          console.log(response.json());
+    this.service.update(post)
+      .subscribe(updatedPost => {
+           console.log(updatedPost);
         });
   }
   deletePost(post) {
-    this.service.deletePost(post.id)
-      .subscribe(
-        response => {
-          const index = this.posts.indexOf(post);
-          this.posts.splice(index, 1);
-          console.log(`post ${post.id} deleted!`);
+    this.service.delete(post.id)
+      .subscribe( () => {
+           const index = this.posts.indexOf(post);
+           this.posts.splice(index, 1);
+           console.log(`post ${post.id} deleted!`);
         },
         (error: AppError) => {
           if (error instanceof NotFoundError) { // 404
@@ -58,12 +55,7 @@ export class PostsComponent implements OnInit {
         });
   }
   ngOnInit() {
-    this.service.getPosts()
-      .subscribe(
-        response => {
-      //  console.log(response.json());
-          this.posts = response.json();
-        });
+    this.service.getAll()
+    .subscribe(posts => this.posts = posts);
   }
 }
-
