@@ -30,10 +30,7 @@ export class PostsComponent implements OnInit {
         (error: AppError) => {
           if (error instanceof BadInput) {  // 400
          //   this.form.setErrors(error.originalError); // if we had a form
-          } else {
-            alert('An unexpected error occurred');
-            console.log(error);
-          }
+          } else { throw error; }
         });
     console.log('post created!' + input.value);
     input.value = ''; // to clear input field
@@ -44,10 +41,6 @@ export class PostsComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response.json());
-        },
-        error => {
-          alert('An unexpected error occurred');
-          console.log(error);
         });
   }
   deletePost(post) {
@@ -61,11 +54,8 @@ export class PostsComponent implements OnInit {
         (error: AppError) => {
           if (error instanceof NotFoundError) { // 404
             alert('This post has already been deleted');
-          } else {
-            alert('An unexpected error occurred');
-            console.log(error);
-          }
-          });
+          } else { throw error; }
+        });
   }
   ngOnInit() {
     this.service.getPosts()
@@ -73,10 +63,6 @@ export class PostsComponent implements OnInit {
         response => {
       //  console.log(response.json());
           this.posts = response.json();
-        },
-        error => {
-          alert('An unexpected error occurred');
-          console.log(error);
         });
   }
 }
