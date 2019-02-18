@@ -1,4 +1,4 @@
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { catchError, map } from 'rxjs/operators';
