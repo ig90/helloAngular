@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 import { catchError } from 'rxjs/operators';
 import { AppError } from '../common/app-error';
 import { NotFoundError } from '../common/not-found-error';
+import { BadInput } from '../common/bad-input';
 // import 'rxjs/add/operator/catch';
 
 @Injectable({
@@ -20,7 +21,14 @@ export class PostService {
     return this.http.get(this.url);
   }
   createPost(post) {
-    return this.http.post(this.url, JSON.stringify(post));
+    return this.http.post(this.url, JSON.stringify(post))
+    .pipe(
+      catchError((error: Response) => {
+        if (error.status === 400) {
+          return throwError(new BadInput(error.json()));
+        }
+        return throwError(new AppError(error.json()));
+      }));
   }
   updatePost(post) {
     // return this.http.put(this.url, JSON.stringify(post));

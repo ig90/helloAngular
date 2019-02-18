@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { PostService } from '../services/post.service';
+import { NotFoundError } from '../common/not-found-error';
+import { AppError } from '../common/app-error';
+import { BadInput } from '../common/bad-input';
 
 @Component({
   selector: 'app-posts',
@@ -24,9 +27,9 @@ export class PostsComponent implements OnInit {
           this.posts.splice(0, 0, post);
           console.log(response.json());
         },
-        (error: Response) => {
-          if (error.status === 400) {
-           // this.form.setErrors(error.json());
+        (error: AppError) => {
+          if (error instanceof BadInput) {  // 400
+         //   this.form.setErrors(error.originalError); // if we had a form
           } else {
             alert('An unexpected error occurred');
             console.log(error);
@@ -55,8 +58,8 @@ export class PostsComponent implements OnInit {
           this.posts.splice(index, 1);
           console.log(`post ${post.id} deleted!`);
         },
-        (error: Response) => {
-          if (error.status === 404) {
+        (error: AppError) => {
+          if (error instanceof NotFoundError) { // 404
             alert('This post has already been deleted');
           } else {
             alert('An unexpected error occurred');
