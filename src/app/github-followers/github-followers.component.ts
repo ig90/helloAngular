@@ -50,5 +50,4 @@ export class GithubFollowersComponent implements OnInit {
     */
 
   }
-
 }
