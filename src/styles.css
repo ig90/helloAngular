@@ -8,3 +8,6 @@ body{
 .form-control.ng-touched.ng-invalid {
     border: 2px solid red;
 }
+.container{
+   margin: 0 auto;
+}

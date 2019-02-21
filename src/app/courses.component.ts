@@ -6,7 +6,8 @@ import { CoursesService } from './course/courses.service';
     template:  `
         <h2>{{ title }}</h2>
         <ul>
-            <li *ngFor="let course of courses"> {{course}}         <button class="btn btn-primary">buy</button>
+            <li *ngFor="let course of courses"> {{course}}
+                <button class="btn btn-primary">buy</button>
             </li>
         </ul>
 
