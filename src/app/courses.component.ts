@@ -3,40 +3,7 @@ import { CoursesService } from './course/courses.service';
 
 @Component({
     selector: 'app-courses', // <app-courses> "app-courses"
-    template:  `
-        <h2>{{ title }}</h2>
-        <ul>
-            <li *ngFor="let course of courses"> {{course}}
-                <button class="btn btn-primary">buy</button>
-            </li>
-        </ul>
-
-        <img [src]="imageUrl" />
-
-        <table>
-            <tr>
-                <td [attr.colspan]="colSpan"></td>
-            </tr>
-        </table>
-
-        {{course.title | uppercase}} <br>
-        {{course.students}} <br>
-        {{course.rating | number:'1.2-2'}} <br>
-        {{course.price | currency:'PLN'}} <br>
-        {{course.releaseDate | date:'d.M.y'}} <br>
-        {{course.description | summary }} <br>
-
-        <button class="btn btn-primary">button</button>
-        <button class="btn btn-primary" [class.active]="isActive">button</button>
-        <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'white'">Buton 3</button>
-        <div (click)="onDivClicked()">  <!-- event bubbling -->
-            <button class="btn btn-primary" (click)="onSave($event)">Save</button>
-        </div>
-        <!-- <input (keyup.enter)="onKeyUp()" /> --> <br>
-       <!--  <input #email (keyup.enter)="onKeyUpEmail(email.value)" placeholder="email" /> -->
-        <br>
-        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
-        `,
+    template: './courses.component.html',
     styleUrls: ['./course/course.component.css']
 
 })

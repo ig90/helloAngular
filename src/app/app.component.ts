@@ -32,13 +32,6 @@ export class AppComponent {
     }
   };
 
-  // courses = [1, 2];
-  courses = [
-    { id: 1, name: 'course1 '},
-    { id: 2, name: 'course2 '},
-    { id: 3, name: 'course3 '}
-  ];
-
   viewMode = 'map';
 
   changeViewMode(viewMode) {
@@ -53,12 +46,5 @@ export class AppComponent {
     console.log('favorite changed to', eventArgs);
   }
 
-  // courses List methods
-  onAdd() {
-    this.courses.push({id: 4, name: 'course4'});
-  }
-  onChange(course) {
-    let idx = this.courses.indexOf(course);
-    this.courses.splice(idx, 1);
-  }
+
 }

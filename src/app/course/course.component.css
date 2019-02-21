@@ -2,7 +2,22 @@
 .btn-primary{
     margin: 10px;
 }
-
 input{
     margin: 10px;
+}
+.isEven {
+    background: #B0BEC5;
+}
+ul li {
+    list-style-type: none;
+    position: relative;
+    height:50px;
+    line-height: 50px;
+    padding: 5px 0;
+}
+.btn-course {
+    position: absolute;
+    right: 5px;    
+    /* top: 50%; */
+    /* transform: translate(0, -50%); */
 }
