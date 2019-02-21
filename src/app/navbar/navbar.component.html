@@ -4,12 +4,12 @@
     </button>
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" id="navbarToggler">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li routerLinkActive="active current" class="nav-item">
+      <li routerLinkActive="active current" [routerLinkActiveOptions]="{exact:true}" class="nav-item">
         <a class="nav-link" routerLink="/">Home</a> 
         <!-- [queryParams]="{ page:1, order: 'newest' }" -->
       </li>
       <li routerLinkActive="active current" class="nav-item">
-          <a class="nav-link" routerLink="/followers">Followers</a> 
+        <a class="nav-link" routerLink="/followers">Followers</a> 
         </li>
       <li routerLinkActive="active current" class="nav-item">
         <a class="nav-link" routerLink="/posts">Posts</a>
