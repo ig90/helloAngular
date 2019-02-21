@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorsService } from '../authors.service';
+import { AuthorsService } from '../services/authors.service';
 
 @Component({
   selector: 'app-author',
@@ -12,7 +12,7 @@ export class AuthorComponent implements OnInit {
   authors;
 
   constructor(service: AuthorsService) {
-    this.authors = service.getAuthors();
+     this.authors = service.getAuthors();
   }
   // getNumberOfAuthors() {
   //   return this.authors.length;
