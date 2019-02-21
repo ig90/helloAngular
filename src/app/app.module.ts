@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
-import { CoursesComponent } from './courses.component';
 import { CoursesService } from './course/courses.service';
 import { AuthorComponent } from './author/author.component';
 import { AuthorsService } from './services/authors.service';
@@ -34,7 +33,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
   declarations: [
     AppComponent,
     SignupFormComponent,
-    CoursesComponent,
     CourseComponent,
     AuthorComponent,
     SummaryPipe,

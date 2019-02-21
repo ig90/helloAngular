@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { FavoriteChangedEventArgs } from './favorite/favorite.component';
-import { CoursesComponent } from './courses.component';
-
 
 @Component({
   selector: 'app-root',
