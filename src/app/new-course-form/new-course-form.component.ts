@@ -41,6 +41,8 @@ export class NewCourseFormComponent {
   // });
 
   submit(course) {
+    // const service = new CoursesService();
+     // this.courses = service.getCourses();
     if (course.isMoneyBackGuarantee === false || course.isMoneyBackGuarantee === '') {
       if (confirm(this.message)) {
         alert('OK!');
@@ -63,5 +65,4 @@ export class NewCourseFormComponent {
     const index = this.topics.controls.indexOf(topic);
     this.topics.removeAt(index);
   }
-
 }

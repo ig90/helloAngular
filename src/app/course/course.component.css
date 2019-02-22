@@ -6,18 +6,29 @@ input{
     margin: 10px;
 }
 .isEven {
-    background: #B0BEC5;
+    background: #ECEFF1;
 }
-ul li {
+.isEven span {
+    font-size: .7em;
+}
+ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
     position: relative;
     height:50px;
-    line-height: 50px;
-    padding: 5px 0;
+    line-height: 40px;
+    padding: 5px;
 }
 .btn-course {
     position: absolute;
     right: 5px;    
     /* top: 50%; */
     /* transform: translate(0, -50%); */
+}
+.btn-success {
+    margin: 5px 0;
+    min-width: 100px;
 }

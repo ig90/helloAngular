@@ -1,4 +1,4 @@
-.bttns {
+.btn-group-ud {
     position: absolute;
     right: 5px;
 }
@@ -6,5 +6,8 @@
     margin-left: 5px;
 }
 .list-group {
+    list-style-type: none;
     position: relative;
+    margin: 0;
+    padding: 0;
 }

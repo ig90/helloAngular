@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CoursesService } from './courses.service';
 
 @Component({
@@ -38,14 +38,13 @@ export class CourseComponent implements OnInit {
     // const service = new CoursesService();
      this.courses = service.getCourses();
  }
-
   ngOnInit() {
   }
   // courses List methods
-  onAdd() {
+  onAdd(name) {
     let count = this.courses.length;
     count++;
-    this.courses.push({id: count, name: `course ${count}`});
+    this.courses.push({id: count, name: `${name} course`});
   }
   onChange(course) {
         let idx = this.courses.indexOf(course);
