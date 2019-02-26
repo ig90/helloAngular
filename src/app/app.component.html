@@ -5,8 +5,6 @@
 
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
-</div>
-
 
 <!-- <img [src]="imageUrl" />
 <button (click)="onClick()"></button> -->
@@ -21,10 +19,7 @@
   </div>
 </app-card>
 
-
 <app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked"></app-like>
-
-
 
 <ul class="nav nav-pills"> 
   <li class="nav-item"><a [class.active]="viewMode == 'map'" class="nav-link" (click)="changeViewMode('map')">Map View</a></li>
@@ -37,13 +32,10 @@
   <div *ngSwitchDefault>Otherwise</div>
 </div>
 
-
-
 <!-- <button
   [style.backgroundColor]="canSave ? 'blue': 'gray'"
   [style.color]="canSave ? 'white': 'black'"
-  [style.fontWeight]="canSave ? 'bold': 'normal'"
->
+  [style.fontWeight]="canSave ? 'bold': 'normal'">
 Save
 </button> -->
 <button [ngStyle]="{
@@ -78,3 +70,4 @@ Save
 
 <app-change-password></app-change-password>
 
+</div>
