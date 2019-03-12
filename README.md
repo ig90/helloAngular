@@ -1,5 +1,7 @@
 # HelloAngular
 
+This is NOT another simple helloworld app, it's overview of most Angular features, including handling events, pipes, building reusable components, directives, forms (reactive and template-driven) and HTTP services
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
